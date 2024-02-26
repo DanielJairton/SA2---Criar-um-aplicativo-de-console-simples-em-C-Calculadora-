@@ -1,0 +1,59 @@
+//Calculadora
+bool continuar = true;
+
+while (continuar)
+{
+    Console.WriteLine("Digite o primeiro valor:");
+    double num1 = Convert.ToDouble(Console.ReadLine());
+    Console.WriteLine("Digite o sinal da operação:");
+    string sinal = Console.ReadLine();
+    Console.WriteLine("Digite o segunddo valor:");
+    double num2 = Convert.ToDouble(Console.ReadLine());
+    switch (sinal)
+    {
+        case "+":
+            Console.WriteLine($"{num1} + {num2} = {num1 + num2}");
+            break;
+        case "-":
+            Console.WriteLine($"{num1} - {num2} = {num1 - num2}");
+            break;
+        case "*":
+            Console.WriteLine($"{num1} * {num2} = {num1 * num2}");
+            break;
+        case "/":
+            if (num2 == 0)
+            {
+                Console.WriteLine("Não é permitido dividir por zero");
+            }
+            else
+            {
+                Console.WriteLine($"{num1} / {num2} = {num1 / num2}");
+            };
+            break;
+        default:
+            Console.WriteLine("Erro ortográfico");
+            Console.WriteLine("Os valores precisam ser números");
+            Console.WriteLine("Os sinais são:");
+            Console.WriteLine("   + para adição");
+            Console.WriteLine("   - para subtração");
+            Console.WriteLine("   * para multiplicação");
+            Console.WriteLine("   / para divisão");
+            break;
+    }
+    Console.WriteLine("Quer continuar ? Digite sim para continuar ou qualquer outra coisa para parar");
+    string confirmar = Console.ReadLine();
+    switch(confirmar)
+    {
+        case "sim": continuar = true;
+            break;
+
+        case "Sim": continuar = true;
+            break;
+
+        case "SIM": continuar = true;
+            break;
+
+        default: continuar = false;
+            break;
+    }
+}
